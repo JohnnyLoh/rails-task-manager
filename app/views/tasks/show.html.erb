@@ -1,0 +1,17 @@
+<h2><%= @task.title %></h2>
+<p><%= @task.details %> </p>
+
+<form action="/action_page.php">
+  <% if @task.completed == false %>
+    <input type="checkbox" name="unchecked" >This task is not completed
+    <br>
+  <% else %>
+    <input type="checkbox" name="checked" checked>  This task is completed
+    <br>
+  <% end %>
+</form>
+
+<p><%= link_to "Edit task", edittask_path %></p>
+
+<p><%= link_to "Back to list", tasks_path %></p>
+

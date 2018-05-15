@@ -1,0 +1,43 @@
+
+
+<div class="container">
+
+  <h2>View tasks:</h2>
+
+  <form action="/action_page.php">
+    <div class="form-group">
+      <% @tasks.each do |task| %>
+        <div class="row form-inline">
+          <% if task.completed == false %>
+            <p class="myform">
+              <input type="checkbox" name="unchecked" value="random">
+            </p>
+            <p class="myform">
+              <%= link_to task.title.capitalize, task_path(task) %>
+            </p>
+            <p class="myform">
+              <%= button_to 'Destroy', task_path(task), data: {:confirm => 'Are you sure?'}, :method => :delete %>
+            <br>
+            </p>
+          <% else %>
+            <p class="myform">
+              <input type="checkbox" name="checked" value="random" checked>
+            </p>
+            <p class="myform">
+              <%= link_to task.title.capitalize, task_path(task) %>
+            </p>
+            <p class="myform">
+              <%= button_to 'Destroy', task_path(task), data: {:confirm => 'Are you sure?'}, :method => :delete %>
+              <br>
+            </p>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </form>
+
+  <%= link_to "+ Add a new Task", newtask_path %>
+
+</div>
+
+

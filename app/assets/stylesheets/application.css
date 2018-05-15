@@ -13,3 +13,30 @@
  *= require_tree .
  *= require_self
  */
+
+.container {
+  color: white;
+  text-align: center;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://picsum.photos/g/1200/1000?image=32');
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  color: white;
+}
+
+.myform {
+  padding: 15px;
+
+}
+
+.button-to {
+
+}
+
+a {
+  font-color: white;
+}
